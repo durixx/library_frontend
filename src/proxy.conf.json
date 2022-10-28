@@ -1,6 +1,7 @@
 {
-  "/api": {
-    "target": "localhost:8080/api/library/create",
-    "secure": false
+  "/api/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true
   }
 }
