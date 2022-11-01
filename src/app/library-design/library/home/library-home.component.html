@@ -1,0 +1,109 @@
+<div>
+  <button mat-raised-button color="accent" (click)="changePageToNewLib()">New Library</button>
+</div>
+<div class="library-home-container"
+     *ngIf="control.viewMode === 'ALL_LIBRARIES'">
+  <div class="library-home-table">
+    <table mat-table
+           [dataSource]="dataSource" multiTemplateDataRows
+           class="mat-elevation-z0">
+      <ng-container matColumnDef="{{column.field}}"
+                    *ngFor="let column of displayedColumns">
+        <th class="library-home-label"
+          *matHeaderCellDef
+            mat-header-cell
+            >
+          {{column.label}}
+        </th>
+        <td mat-cell class="library-home-field"
+            *matCellDef="let element">
+          {{element[column.field]}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="expand">
+        <th mat-header-cell
+            *matHeaderCellDef
+            aria-label="row actions">
+          &nbsp;
+        </th>
+        <td mat-cell
+            *matCellDef="let element">
+          <button mat-icon-button
+                  aria-label="expand row"
+                  (click)="(expandedElement = expandedElement === element ? null : element);
+                   $event.stopPropagation()">
+            <mat-icon
+              *ngIf="expandedElement !== element">
+              keyboard_arrow_down
+            </mat-icon>
+            <mat-icon
+              *ngIf="expandedElement === element">
+              keyboard_arrow_up
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell
+            *matCellDef="let element"
+            [attr.colspan]="columnsToDisplayWithExpand.length">
+          <div class="dur-element-detail"
+               [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <div class="library-home-content">
+              <div *ngIf="expandedElement">
+                <mat-form-field
+                  appearance="fill">
+                  <input matInput
+                         readonly value={{expandedElement.address}}>
+                  <mat-label>
+                    Address
+                  </mat-label>
+                </mat-form-field>
+              </div>
+              <div *ngIf="expandedElement">
+                <mat-form-field
+                  appearance="fill">
+                  <input matInput
+                         readonly
+                         value={{expandedElement.city}}>
+                  <mat-label>
+                    City
+                  </mat-label>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="library-home-content">
+              <div
+                *ngIf="expandedElement">
+                <mat-form-field
+                  appearance="fill">
+                  <input matInput
+                         readonly
+                         value={{expandedElement.country}}>
+                  <mat-label>
+                    Country
+                  </mat-label>
+                </mat-form-field>
+              </div>
+
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row
+          *matHeaderRowDef="columnsToDisplayWithExpand">
+      </tr>
+      <tr mat-row class="dur-element-row"
+          *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+          [class.dur-expanded-row]="expandedElement === element"
+          (click)="expandedElement = expandedElement === element ? null : element">
+      </tr>
+      <tr mat-row class="dur-detail-row"
+          *matRowDef="let row; columns: ['expandedDetail']">
+      </tr>
+    </table>
+  </div>
+</div>

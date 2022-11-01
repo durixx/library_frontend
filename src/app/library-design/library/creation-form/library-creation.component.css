@@ -1,14 +1,12 @@
-.mat-form-field {
+.library-home-mat-form-field {
   min-width: 150px;
   max-width: 400px;
   width: 100%;
 }
 
-.header {
 
-}
 
-.container {
+.library-home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +14,7 @@
   background: #3f51b5;
 }
 
-.form {
+.library-home-form {
   display: flex;
   background: #fafafa;
   text-align: center;
@@ -32,7 +30,7 @@
   border-radius: 25px;
   margin-top: 50px;
 }
-.buttons {
+.library-home-buttons {
   display: flex;
   justify-content: center;
   max-width: 200px;
@@ -40,7 +38,7 @@
   padding: 10px ;
 }
 
-.button {
+.library-home-button {
   margin-left: 10px;
   margin-right: 10px;
 }
