@@ -9,11 +9,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {LibraryHomeComponent} from './library-design/library/home/library-home.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {LibraryControlService} from './library-design/library/library-control.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LibraryCreationComponent,
+    LibraryHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatIconModule
   ],
   exports: [
     BrowserModule,
@@ -34,10 +41,12 @@ import {HttpClientModule} from '@angular/common/http';
     MatSelectModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatIconModule
   ],
 
-  providers: [],
+  providers: [LibraryControlService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

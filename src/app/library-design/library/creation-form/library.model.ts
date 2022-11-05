@@ -1,4 +1,4 @@
-export class LibraryCreationModule {
+export class Library {
 
   libraryName: string;
   address: string;
