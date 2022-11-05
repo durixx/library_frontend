@@ -1,0 +1,38 @@
+<div class="container" *ngIf="isNewLibraryFormVisible">
+  <div class="form" [formGroup]="formGroup">
+    <h1 class="header">Library Registration</h1>
+    <p>
+      <mat-form-field class="mat-form-field" appearance="standard">
+        <mat-label>Name of library</mat-label>
+        <input formControlName="nameOfLibrary" matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="mat-form-field" appearance="standard">
+        <mat-label>Country</mat-label>
+        <input formControlName="country" matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="mat-form-field" appearance="standard">
+        <mat-label>City</mat-label>
+        <input formControlName="city" matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="mat-form-field" appearance="standard">
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput>
+      </mat-form-field>
+    </p>
+    <div class="buttons">
+      <button class="button"
+              mat-raised-button color="primary"
+              [disabled]="!formGroup.valid"
+              (click)="submit(formGroup.value)">
+        Confirm
+      </button>
+      <button class="button" mat-raised-button>Cancel</button>
+    </div>
+  </div>
+</div>
