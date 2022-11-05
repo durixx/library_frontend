@@ -42,6 +42,19 @@ tr.dur-detail-row {
   height: 0;
 }
 
+.dur-content-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dur-content-container-button {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
 tr.dur-element-row:not(.dur-expanded-row):hover {
   background: whitesmoke;
 }
@@ -58,6 +71,7 @@ tr.dur-element-row:not(.dur-expanded-row):active {
   overflow: hidden;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .dur-element-description-attribution {

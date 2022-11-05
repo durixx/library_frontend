@@ -29,14 +29,15 @@ export class LibraryCreationComponent implements OnInit {
     });
   }
 
-  submit(data) {
+  submitRegistration(data) {
     if (this.formGroup.valid) {
-      console.log('valid');
-      this.http.post('http://localhost:4200/api/library/', data).subscribe();
-    } else {
-      console.log('not valid');
+      this.http.post('http://localhost:4200/api/library', data).subscribe();
     }
-    console.warn(data);
+
+  }
+
+  public onCancelNewLibrary(): void {
+    this.changePageToNewLib();
   }
 
   changePageToNewLib() {

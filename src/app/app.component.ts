@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {LibraryControlService} from './library-design/library/library-control.service';
 
 
 @Component({
@@ -8,5 +9,9 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
+
   title = 'frontend';
+
+  constructor(public libraryControlService: LibraryControlService) {
+  }
 }

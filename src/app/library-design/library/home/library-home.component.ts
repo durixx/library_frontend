@@ -1,8 +1,9 @@
-import {Component,} from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Library} from '../creation-form/library.model';
 import {LibraryControlService} from '../library-control.service';
+import {LibraryRequestService} from '../library-request.service';
 
 
 
@@ -31,14 +32,13 @@ export class LibraryHomeComponent {
   columnsToDisplayWithExpand = [...this.displayedColumns.map(col => col.field), 'expand'];
   expandedElement: Library | null;
 
-  constructor(private http: HttpClient, public control: LibraryControlService) {
+
+  constructor(public control: LibraryControlService, public service: LibraryRequestService) {
   }
 
   ngOnInit(): void {
-    this.http
-      .get('http://localhost:4200/api/library/all')
-      .subscribe((dataSource: Library[])  => {
-        console.log('library', dataSource)
+    this.service.getAllLibraries()
+      .subscribe(dataSource => {
         this.dataSource = dataSource;
       });
   }
@@ -49,6 +49,11 @@ export class LibraryHomeComponent {
 
   changePageToNewLib() {
     this.control.changeModeToNewLibrary();
+  }
+
+  public onLibraryDetailOpen(library: Library): void {
+    this.control.openedLibrary = library;
+    this.control.changeModeToDetail();
   }
 }
 

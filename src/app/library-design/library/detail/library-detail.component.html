@@ -1,0 +1,58 @@
+<div class="library-detail-container"
+     *ngIf="control.viewMode === 'DETAIL_LIBRARY'">
+  <div class="library-detail-content"
+       [formGroup]="formGroup">
+    <h1 class="library-home-header">
+      Library
+    </h1>
+    <div class="library-detail-inputs">
+
+      <mat-form-field
+
+        appearance="fill">
+        <input matInput
+               formControlName="nameOfLibrary"
+               (focusout)="onFocusEvent(library)"
+               [(ngModel)]="library.nameOfLibrary"
+        >
+        <mat-label>
+          Name
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill">
+        <input matInput
+               formControlName="address"
+               (focusout)="onFocusEvent(library)"
+               [(ngModel)]="library.address">
+
+        <mat-label>
+          Address
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill">
+        <input matInput
+               formControlName="city"
+               (focusout)="onFocusEvent(library)"
+               [(ngModel)]="library.city">
+        <mat-label>
+          City
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill">
+        <input matInput
+               formControlName="country"
+               (focusout)="onFocusEvent(library)"
+               [(ngModel)]="library.country">
+        <mat-label>
+          Country
+        </mat-label>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

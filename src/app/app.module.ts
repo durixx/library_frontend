@@ -13,12 +13,14 @@ import {LibraryHomeComponent} from './library-design/library/home/library-home.c
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {LibraryControlService} from './library-design/library/library-control.service';
+import { LibraryDetailComponent } from './library-design/library/detail/library-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LibraryCreationComponent,
     LibraryHomeComponent,
+    LibraryDetailComponent,
   ],
   imports: [
     BrowserModule,

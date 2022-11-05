@@ -1,6 +1,7 @@
 export class Library {
 
-  libraryName: string;
+  id: number;
+  nameOfLibrary: string;
   address: string;
   city: string;
   country: string;

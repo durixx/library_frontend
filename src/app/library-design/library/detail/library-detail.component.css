@@ -1,0 +1,32 @@
+.library-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1000px;
+  background: #3f51b5;
+}
+
+.library-detail-content {
+  display: flex;
+  background: #fafafa;
+  text-align: center;
+  color: black;
+  min-width: 350px;
+  padding: 1px;
+  align-content: space-around;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: solid 3px white;
+  box-shadow: 0 30px 40px rgba(0,0,0,.1);
+  border-radius: 25px;
+  margin-top: 50px;
+}
+
+.library-detail-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+}
+
