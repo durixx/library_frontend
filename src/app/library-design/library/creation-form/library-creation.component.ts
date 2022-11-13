@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {LibraryControlService} from '../library-control.service';
+import {DurMessageBarInfoService} from '../../../library-message/dur-message-bar-info.service';
 
 class Library {
 }
@@ -17,8 +18,10 @@ export class LibraryCreationComponent implements OnInit {
   public formGroup: FormGroup;
   public isNewLibraryFormVisible = true;
 
-  constructor(private http: HttpClient, public control: LibraryControlService) {
-  }
+  constructor(private http: HttpClient,
+              public control: LibraryControlService,
+              public durMessageBarInfoService: DurMessageBarInfoService,
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -32,8 +35,10 @@ export class LibraryCreationComponent implements OnInit {
   submitRegistration(data) {
     if (this.formGroup.valid) {
       this.http.post('http://localhost:4200/api/library', data).subscribe();
+      this.durMessageBarInfoService.success('Successfully created library');
+      this.durMessageBarInfoService.displayMessage = true;
+      this.durMessageBarInfoService.startTimer();
     }
-
   }
 
   public onCancelNewLibrary(): void {

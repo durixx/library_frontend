@@ -14,6 +14,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {LibraryControlService} from './library-design/library/library-control.service';
 import { LibraryDetailComponent } from './library-design/library/detail/library-detail.component';
+import { LibraryMessageComponent } from './library-message/library-message.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { LibraryDetailComponent } from './library-design/library/detail/library-
     LibraryCreationComponent,
     LibraryHomeComponent,
     LibraryDetailComponent,
+    LibraryMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { LibraryDetailComponent } from './library-design/library/detail/library-
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   exports: [
     BrowserModule,

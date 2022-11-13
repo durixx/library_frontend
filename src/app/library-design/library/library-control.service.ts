@@ -22,11 +22,12 @@ export class LibraryControlService {
   changeModeToDetail() {
     this.viewMode = ViewMode.DETAIL_LIBRARY;
   }
+
 }
 export enum ViewMode {
   NEW_LIBRARY = 'NEW_LIBRARY',
   ALL_LIBRARIES = 'ALL_LIBRARIES',
-  DETAIL_LIBRARY = 'DETAIL_LIBRARY'
+  DETAIL_LIBRARY = 'DETAIL_LIBRARY',
 }
 
 

@@ -1,3 +1,4 @@
+
 <div class="library-home-container"
      *ngIf="control.viewMode === 'NEW_LIBRARY'">
   <div class="library-home-form"
@@ -46,7 +47,9 @@
       <button class="button"
               mat-raised-button color="primary"
               [disabled]="!formGroup.valid"
-              (click)="submitRegistration(formGroup.value)">
+              (click)="submitRegistration(formGroup.value)"
+
+      >
         Confirm
       </button>
       <button class="library-home-button"

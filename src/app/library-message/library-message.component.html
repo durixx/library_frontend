@@ -1,0 +1,28 @@
+
+<div class="library-message-container"
+  *ngIf="durMessageBarInfoService.displayMessage"
+>
+  <div class="library-message"
+       [ngStyle]="{'color': this.messageBarInfo.color}">
+  </div>
+  <div class="library-message-content">
+    <div class="library-message-content-icon-success"
+    [ngStyle]="{'color': this.messageBarInfo.color}">
+      <mat-icon>{{this.messageBarInfo.icon}}</mat-icon>
+    </div>
+    <div class="library-message-content-text">
+      <div class="library-message-content-main-text">
+        {{this.messageBarInfo.primaryText}}
+      </div>
+      <div class="library-message-content-additional-text">
+        {{this.message}}
+      </div>
+    </div>
+    <div class="library-message-content-button">
+      <button mat-flat-button
+              (click)="durMessageBarInfoService.displayMessage = false;
+               durMessageBarInfoService.stopTimer()"
+      >CLOSE</button>
+    </div>
+  </div>
+</div>
