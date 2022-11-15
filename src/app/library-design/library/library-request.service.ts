@@ -19,6 +19,10 @@ export class LibraryRequestService {
     return this.http.get<Library[]>(this.httpConfigService.rootUrl + this.LIBRARY + '/all');
   }
 
+  postLibrary(library: Library): Observable<Library> {
+    return this.http.post<Library>(`${this.httpConfigService.rootUrl}${this.LIBRARY}`, library);
+  }
+
   patchLibrary(library: Library): Observable<Library> {
     return this.http.patch<Library>(`${this.httpConfigService.rootUrl}${this.LIBRARY}/${library.id}`, library);
   }

@@ -20,6 +20,8 @@ export class DurMessageBarInfoService {
     this.message = message;
     this.messageBarInfo = DurMessageBarInfo.SUCCESS;
     this.messageShownSubject.next();
+    this.displayMessage = true;
+    this.startTimer();
   }
 
   public warning(message: string) {
