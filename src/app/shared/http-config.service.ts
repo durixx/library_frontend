@@ -4,5 +4,5 @@ import {Injectable} from '@angular/core';
   providedIn: 'root',
 })
 export class HttpConfigService {
-  public rootUrl: string = 'http://localhost:4200/api';
+  public rootUrl = 'http://localhost:4200/api';
 }

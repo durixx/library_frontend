@@ -1,0 +1,54 @@
+<div class="library-detail-container"
+     *ngIf="control.viewMode === 'NEW_RACK'">
+  <div class="library-detail-content"
+       [formGroup]="formGroup">
+    <h1 class="library-home-header">
+      New Rack
+    </h1>
+    <div class="library-detail-inputs">
+      <mat-form-field
+
+        appearance="fill">
+        <input matInput
+               disabled
+               value="{{ this.control.openedLibrary.nameOfLibrary }}"
+        >
+        <mat-label>
+          Name of Library
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill">
+        <input matInput
+               disabled
+               value="{{ this.getRackLabel() }}"
+        >
+        <mat-label>
+          Label
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="fill">
+        <input matInput
+               type="number"
+               min="1"
+               formControlName="size"
+               [(ngModel)]="rackControl.rack.size">
+        <mat-label>
+          Rack size
+        </mat-label>
+      </mat-form-field>
+
+      <button mat-stroked-button color="basic" (click)="this.onReturn()">Return to list</button>
+      <button class="button"
+              mat-raised-button color="primary"
+              [disabled]="!formGroup.valid"
+              (click)="onSubmitRegistration(rackControl.rack)"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {filter, map, Observable} from 'rxjs';
 import {Library} from './creation-form/library.model';
 import {HttpConfigService} from '../../shared/http-config.service';
+import {Rack} from '../rack/rack-creation-form/rack.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import {HttpConfigService} from '../../shared/http-config.service';
 export class LibraryRequestService {
 
   private readonly LIBRARY: string = '/library';
+  private readonly RACK: string = '/rack';
 
   constructor(private http: HttpClient, private httpConfigService: HttpConfigService) {
   }
@@ -27,7 +29,11 @@ export class LibraryRequestService {
     return this.http.patch<Library>(`${this.httpConfigService.rootUrl}${this.LIBRARY}/${library.id}`, library);
   }
 
-  stringOfUrl(library: Library) {
-    return (`${this.httpConfigService.rootUrl}${this.LIBRARY}/${library.id}`);
+  getLabel(library: Library): Observable<any> {
+    return this.http.get(`${this.httpConfigService.rootUrl}${this.RACK}/${library.id}/unique-identifier`);
+  }
+
+  postRack(rack: Rack, idOfLib: number): Observable<Rack> {
+    return this.http.post<Rack>(`${this.httpConfigService.rootUrl}${this.RACK}/${idOfLib}`, rack);
   }
 }

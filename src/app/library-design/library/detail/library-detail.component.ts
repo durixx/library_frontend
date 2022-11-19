@@ -32,4 +32,12 @@ export class LibraryDetailComponent{
       this.service.patchLibrary(event).subscribe();
     }
   }
+
+  onReturn() {
+    this.returnToList();
+  }
+
+  returnToList() {
+    this.control.changeModeToList();
+  }
 }

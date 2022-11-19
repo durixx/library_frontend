@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {LibraryControlService} from '../library-control.service';
 import {DurMessageBarInfoService} from '../../../library-message/dur-message-bar-info.service';
-import {LibraryRequestService} from "../library-request.service";
+import {LibraryRequestService} from '../library-request.service';
 
 class Library {
 }
@@ -48,9 +48,5 @@ export class LibraryCreationComponent implements OnInit {
 
   changePageToNewLib() {
     this.control.changeModeToList();
-  }
-
-  onSuccessfulCreation() {
-
   }
 }

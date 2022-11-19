@@ -16,6 +16,8 @@ import {LibraryControlService} from './library-design/library/library-control.se
 import { LibraryDetailComponent } from './library-design/library/detail/library-detail.component';
 import { LibraryMessageComponent } from './library-message/library-message.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { RackCreationComponent } from './library-design/rack/rack-creation-form/rack-creation.component';
+import {RackControlService} from './library-design/rack/rack-creation-form/rack-control.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     LibraryHomeComponent,
     LibraryDetailComponent,
     LibraryMessageComponent,
+    RackCreationComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule
   ],
 
-  providers: [LibraryControlService],
+  providers: [LibraryControlService,RackControlService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

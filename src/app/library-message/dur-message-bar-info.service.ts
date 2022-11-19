@@ -13,7 +13,7 @@ export class DurMessageBarInfoService {
   public message: string;
   public displayMessage: boolean;
 
-  private timeLeft: number = 5;
+  private timeLeft = 5;
   private interval;
 
   public success(message: string) {
