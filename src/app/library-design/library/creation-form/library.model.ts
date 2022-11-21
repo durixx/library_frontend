@@ -1,3 +1,5 @@
+import {Rack} from '../../rack/rack-creation-form/rack.model';
+
 export class Library {
 
   id: number;
@@ -5,6 +7,7 @@ export class Library {
   address: string;
   city: string;
   country: string;
+  rackList: Rack[];
 
 
   constructor() {

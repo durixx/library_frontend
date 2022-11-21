@@ -11,6 +11,7 @@ export class LibraryControlService {
 
   public viewMode: ViewMode = ViewMode.ALL_LIBRARIES;
   public openedLibrary: Library;
+  public listOfOpenedRacks: Rack[];
 
 
   public rackShownSubject: Subject<Rack> = new Subject<Rack>();
@@ -27,6 +28,10 @@ export class LibraryControlService {
 
   changeModeToDetail() {
     this.viewMode = ViewMode.DETAIL_LIBRARY;
+    this.libraryRequestService.getAllRacks(this.openedLibrary).subscribe(listOfRacks => {
+      this.listOfOpenedRacks = listOfRacks;
+      }
+    );
   }
 
   changeModeToNewRack() {

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LibraryControlService} from './library-design/library/library-control.service';
+import {LibraryControlService, ViewMode} from './library-design/library/library-control.service';
 
 
 @Component({

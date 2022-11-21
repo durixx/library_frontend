@@ -17,10 +17,8 @@ class Library {
 
 export class LibraryCreationComponent implements OnInit {
   public formGroup: FormGroup;
-  public isNewLibraryFormVisible = true;
 
-  constructor(private http: HttpClient,
-              public control: LibraryControlService,
+  constructor(public control: LibraryControlService,
               public durMessageBarInfoService: DurMessageBarInfoService,
               public service: LibraryRequestService
   ) {}

@@ -1,5 +1,5 @@
 <dur-app-form></dur-app-form>
 <dur-app-home></dur-app-home>
-<dur-library-detail [library]="libraryControlService.openedLibrary"></dur-library-detail>
+<dur-library-detail [library]="libraryControlService.openedLibrary" *ngIf="libraryControlService.viewMode === 'DETAIL_LIBRARY'"></dur-library-detail>
 <dur-app-message></dur-app-message>
 <dur-rack-creation [library]="libraryControlService.openedLibrary"></dur-rack-creation>

@@ -36,4 +36,8 @@ export class LibraryRequestService {
   postRack(rack: Rack, idOfLib: number): Observable<Rack> {
     return this.http.post<Rack>(`${this.httpConfigService.rootUrl}${this.RACK}/${idOfLib}`, rack);
   }
+
+  getAllRacks(library: Library): Observable<Rack[]> {
+    return this.http.get<Rack[]>(`${this.httpConfigService.rootUrl}${this.RACK}/${library.id}/all`);
+  }
 }

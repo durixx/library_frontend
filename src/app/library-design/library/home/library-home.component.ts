@@ -24,7 +24,7 @@ import {LibraryRequestService} from '../library-request.service';
 export class LibraryHomeComponent {
 
   displayedColumns: TableColumn[] = [
-    {field: 'id', label: 'Id', visible: false},
+    {field: 'id', label: 'Id', visible: true},
     {field: 'nameOfLibrary', label: 'Name', visible: true},
 ];
 

@@ -3,6 +3,7 @@
   <div>
     <button mat-raised-button color="accent" (click)="changePageToNewLib()">New Library</button>
   </div>
+
   <div class="library-home-table">
     <table mat-table
            [dataSource]="dataSource" multiTemplateDataRows
@@ -54,23 +55,23 @@
                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
             <div class="dur-content-container">
               <div class="library-home-content">
-                <div *ngIf="expandedElement">
+                <div>
                   <mat-form-field
                     appearance="fill">
                     <input matInput
-                           readonly value={{expandedElement.address}}>
+                           readonly value={{element.address}}>
                     <mat-label>
                       Address
                     </mat-label>
                   </mat-form-field>
                 </div>
 
-                <div *ngIf="expandedElement">
+                <div>
                   <mat-form-field
                     appearance="fill">
                     <input matInput
                            readonly
-                           value={{expandedElement.city}}>
+                           value={{element.city}}>
                     <mat-label>
                       City
                     </mat-label>
@@ -79,13 +80,12 @@
               </div>
 
               <div class="library-home-content">
-                <div
-                  *ngIf="expandedElement">
+                <div>
                   <mat-form-field
                     appearance="fill">
                     <input matInput
                            readonly
-                           value={{expandedElement.country}}>
+                           value={{element.country}}>
                     <mat-label>
                       Country
                     </mat-label>
