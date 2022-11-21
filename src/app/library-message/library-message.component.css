@@ -2,16 +2,15 @@
   margin: 25px;
   display: flex;
   flex-direction: row;
-  min-width: 440px;
-  min-height: 120px;
-  max-width: 440px;
-  max-height: 120px;
+  max-width: 410px;
+  max-height: 100px;
   background-color: #fafafa;
   box-shadow: 0 5px 30px 5px rgb(0 0 0 / 10%);
   justify-content: flex-start;
   border-radius: 17px 5px 5px 17px;
   position: absolute;
   top: 80px;
+  right: -31px;
 }
 
 .library-message {
@@ -95,7 +94,7 @@
 }
 
 .library-message-content-button {
-  margin-left: 68px;
+  margin-left: 37px;
   display: flex;
-  min-height: 120px;
+  min-height: 100px;
 }
