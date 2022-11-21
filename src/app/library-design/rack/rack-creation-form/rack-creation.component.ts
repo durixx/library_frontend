@@ -32,7 +32,8 @@ export class RackCreationComponent implements OnInit {
     return this.rackControl.rack !== undefined ? this.rackControl.rack.label : '';
   }
 
-  public onReturn() {
+  public onLibraryDetailOpen(library: Library): void {
+    this.control.openedLibrary = library;
     this.control.changeModeToDetail();
   }
 
@@ -40,6 +41,8 @@ export class RackCreationComponent implements OnInit {
     if (this.formGroup.valid && !this.formGroup.pristine) {
       this.service.postRack(data, this.library.id).subscribe(()=>{
         this.durMessageBarInfoService.success('Successfully created rack');
+        this.onLibraryDetailOpen(this.library);
+        this.formGroup.reset();
       });
     }
   }

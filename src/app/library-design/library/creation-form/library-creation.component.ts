@@ -1,12 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
 import {LibraryControlService} from '../library-control.service';
 import {DurMessageBarInfoService} from '../../../library-message/dur-message-bar-info.service';
 import {LibraryRequestService} from '../library-request.service';
-
-class Library {
-}
 
 @Component({
   selector: 'dur-app-form',
@@ -34,8 +30,10 @@ export class LibraryCreationComponent implements OnInit {
 
   onSubmitRegistration(data) {
     if (this.formGroup.valid) {
-      this.service.postLibrary(data).subscribe(()=>{
+      this.service.postLibrary(data)
+        .subscribe(()=>{
         this.durMessageBarInfoService.success('Successfully created library');
+        this.changePageToNewLib();
       });
     }
   }
@@ -46,5 +44,6 @@ export class LibraryCreationComponent implements OnInit {
 
   changePageToNewLib() {
     this.control.changeModeToList();
+    this.formGroup.reset();
   }
 }

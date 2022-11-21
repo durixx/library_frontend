@@ -11,25 +11,37 @@ export class LibraryControlService {
 
   public viewMode: ViewMode = ViewMode.ALL_LIBRARIES;
   public openedLibrary: Library;
+  public lisOfOpenedLibraries: Library[];
   public listOfOpenedRacks: Rack[];
 
 
   public rackShownSubject: Subject<Rack> = new Subject<Rack>();
 
-  constructor(public libraryRequestService: LibraryRequestService) {}
+  constructor(public libraryRequestService: LibraryRequestService) {
+  }
 
   changeModeToNewLibrary() {
-    this.viewMode = ViewMode.NEW_LIBRARY;
+
+    this.libraryRequestService.getAllLibraries().subscribe(listOfLibraries => {
+      this.lisOfOpenedLibraries = listOfLibraries;
+      this.viewMode = ViewMode.NEW_LIBRARY;
+      }
+    );
   }
 
   changeModeToList() {
-    this.viewMode = ViewMode.ALL_LIBRARIES;
+    this.libraryRequestService.getAllLibraries().subscribe(listOfLibraries => {
+        this.lisOfOpenedLibraries = listOfLibraries;
+        this.viewMode = ViewMode.ALL_LIBRARIES;
+      }
+    );
   }
 
   changeModeToDetail() {
-    this.viewMode = ViewMode.DETAIL_LIBRARY;
     this.libraryRequestService.getAllRacks(this.openedLibrary).subscribe(listOfRacks => {
-      this.listOfOpenedRacks = listOfRacks;
+        this.listOfOpenedRacks = listOfRacks;
+        this.openedLibrary.rackList = listOfRacks;
+        this.viewMode = ViewMode.DETAIL_LIBRARY;
       }
     );
   }
@@ -41,6 +53,7 @@ export class LibraryControlService {
     });
   }
 }
+
 export enum ViewMode {
   NEW_LIBRARY = 'NEW_LIBRARY',
   ALL_LIBRARIES = 'ALL_LIBRARIES',

@@ -16,7 +16,7 @@
 
 .library-home-form {
   display: flex;
-  background: #fafafa;
+  background: #fff;
   text-align: center;
   color: black;
   min-width: 450px;
@@ -26,7 +26,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   border: solid 3px white;
-  box-shadow: 0 30px 40px rgba(0,0,0,.1);
+  box-shadow: 0 0 40px rgba(0,0,0,.1);
   border-radius: 25px;
   margin-top: 50px;
 }

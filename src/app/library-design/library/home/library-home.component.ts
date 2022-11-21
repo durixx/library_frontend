@@ -28,7 +28,7 @@ export class LibraryHomeComponent {
     {field: 'nameOfLibrary', label: 'Name', visible: true},
 ];
 
-  dataSource: Library[] = [];
+
   columnsToDisplayWithExpand = [...this.displayedColumns.map(col => col.field), 'expand'];
   expandedElement: Library | null;
 
@@ -39,7 +39,7 @@ export class LibraryHomeComponent {
   ngOnInit(): void {
     this.service.getAllLibraries()
       .subscribe(dataSource => {
-        this.dataSource = dataSource;
+        this.control.lisOfOpenedLibraries = dataSource;
       });
   }
 

@@ -43,6 +43,7 @@ export class DurMessageBarInfoService {
   }
 
   startTimer() {
+    this.stopTimer();
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         console.log(this.timeLeft);

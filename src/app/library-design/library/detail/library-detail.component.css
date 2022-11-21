@@ -45,6 +45,26 @@
   justify-content: space-around;
 }
 
+.library-detail-table {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 700px;
+  align-content: space-between;
+}
+
+.library-detail-table-header {
+  text-align: left;
+}
+
+.library-detail-table-content {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+
 table {
   width: 100%;
 }

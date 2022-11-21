@@ -15,7 +15,7 @@
   min-width: 850px;
   flex-direction: column;
   border: solid 3px white;
-  box-shadow: 0 30px 40px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 40px rgb(0 0 0 / 10%);
   border-radius: 7px;
   margin-top: 50px;
   align-items: stretch;

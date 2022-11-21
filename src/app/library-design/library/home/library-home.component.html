@@ -6,7 +6,7 @@
 
   <div class="library-home-table">
     <table mat-table
-           [dataSource]="dataSource" multiTemplateDataRows
+           [dataSource]="control.lisOfOpenedLibraries" multiTemplateDataRows
            class="mat-elevation-z0">
       <ng-container matColumnDef="{{column.field}}"
                     *ngFor="let column of displayedColumns">

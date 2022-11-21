@@ -29,13 +29,12 @@ export class LibraryDetailComponent{
   columnsToDisplay = ['id', 'label', 'size'];
   columnsToDisplayWithExpand = [...this.displayedColumns.map(col => col.field), 'expand'];
   expandedElement: Rack | null;
-  showTable = false;
+
 
   @Input() library: Library;
   public formGroup: FormGroup;
 
   constructor(public control: LibraryControlService, public service: LibraryRequestService) {
-    console.log(this.library);
   }
 
   ngOnInit(): void {
