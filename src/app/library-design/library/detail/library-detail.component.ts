@@ -61,5 +61,10 @@ export class LibraryDetailComponent{
   returnToList() {
     this.control.changeModeToList();
   }
+
+  public onRackCreationOpen(library: Library): void {
+    this.control.openedLibrary = library;
+    this.control.changeModeToNewRack();
+  }
 }
 

@@ -33,11 +33,7 @@ export class RackCreationComponent implements OnInit {
   }
 
   public onReturn() {
-    this.control.changeModeToList();
-  }
-
-  public test() {
-    console.log(this.rackControl.rack);
+    this.control.changeModeToDetail();
   }
 
   onSubmitRegistration(data) {

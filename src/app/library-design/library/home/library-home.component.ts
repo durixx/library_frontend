@@ -55,11 +55,6 @@ export class LibraryHomeComponent {
     this.control.openedLibrary = library;
     this.control.changeModeToDetail();
   }
-
-  public onRackCreationOpen(library: Library): void {
-    this.control.openedLibrary = library;
-    this.control.changeModeToNewRack();
-  }
 }
 
 export class TableColumn {
