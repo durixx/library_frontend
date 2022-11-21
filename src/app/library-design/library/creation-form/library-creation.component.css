@@ -27,7 +27,7 @@
   flex-wrap: nowrap;
   border: solid 3px white;
   box-shadow: 0 0 40px rgba(0,0,0,.1);
-  border-radius: 25px;
+  border-radius: 7px;
   margin-top: 50px;
 }
 .library-home-buttons {

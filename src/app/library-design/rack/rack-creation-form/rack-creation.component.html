@@ -1,54 +1,64 @@
-<div class="library-detail-container"
+<div class="rack-creation-container"
      *ngIf="control.viewMode === 'NEW_RACK'">
-  <div class="library-detail-content"
+  <div class="rack-creation-content"
        [formGroup]="formGroup">
     <h1 class="library-home-header">
       New Rack
     </h1>
-    <div class="library-detail-inputs">
-      <mat-form-field
+    <div class="rack-creation-inputs">
 
-        appearance="fill">
-        <input matInput
-               disabled
-               value="{{ this.control.openedLibrary.nameOfLibrary }}"
+        <mat-form-field
+
+          appearance="fill">
+          <input matInput
+                 disabled
+                 value="{{ this.control.openedLibrary.nameOfLibrary }}"
+          >
+          <mat-label>
+            Name of Library
+          </mat-label>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="fill">
+          <input matInput
+                 disabled
+                 value="{{ this.getRackLabel() }}"
+          >
+          <mat-label>
+            Label
+          </mat-label>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="fill">
+          <input matInput
+                 type="number"
+                 min="1"
+                 formControlName="size"
+                 [(ngModel)]="rackControl.rack.size">
+          <mat-label>
+            Rack size
+          </mat-label>
+        </mat-form-field>
+
+    </div>
+    <div class="rack-creation-buttons">
+      <div class="rack-creation-button">
+        <button mat-stroked-button color="basic"
+                (click)="this.onLibraryDetailOpen(this.library)"
+        >Back
+        </button>
+      </div>
+      <div class="rack-creation-button">
+        <button class="button"
+                mat-raised-button color="primary"
+                [disabled]="!formGroup.valid"
+                (click)="onSubmitRegistration(rackControl.rack)"
         >
-        <mat-label>
-          Name of Library
-        </mat-label>
-      </mat-form-field>
-
-      <mat-form-field
-        appearance="fill">
-        <input matInput
-               disabled
-               value="{{ this.getRackLabel() }}"
-        >
-        <mat-label>
-          Label
-        </mat-label>
-      </mat-form-field>
-
-      <mat-form-field
-        appearance="fill">
-        <input matInput
-               type="number"
-               min="1"
-               formControlName="size"
-               [(ngModel)]="rackControl.rack.size">
-        <mat-label>
-          Rack size
-        </mat-label>
-      </mat-form-field>
-
-      <button mat-stroked-button color="basic" (click)="this.onLibraryDetailOpen(this.library)">Back</button>
-      <button class="button"
-              mat-raised-button color="primary"
-              [disabled]="!formGroup.valid"
-              (click)="onSubmitRegistration(rackControl.rack)"
-      >
-        Confirm
-      </button>
+          Confirm
+        </button>
+      </div>
     </div>
   </div>
 </div>
