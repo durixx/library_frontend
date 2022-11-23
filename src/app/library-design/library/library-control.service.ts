@@ -21,7 +21,6 @@ export class LibraryControlService {
   }
 
   changeModeToNewLibrary() {
-
     this.libraryRequestService.getAllLibraries().subscribe(listOfLibraries => {
       this.lisOfOpenedLibraries = listOfLibraries;
       this.viewMode = ViewMode.NEW_LIBRARY;
@@ -52,13 +51,18 @@ export class LibraryControlService {
       this.rackShownSubject.next(rack);
     });
   }
+
+  changeModeToNewBook() {
+    this.viewMode = ViewMode.NEW_BOOK;
+  }
 }
 
 export enum ViewMode {
   NEW_LIBRARY = 'NEW_LIBRARY',
   ALL_LIBRARIES = 'ALL_LIBRARIES',
   DETAIL_LIBRARY = 'DETAIL_LIBRARY',
-  NEW_RACK = 'NEW_RACK'
+  NEW_RACK = 'NEW_RACK',
+  NEW_BOOK = 'NEW_BOOK'
 }
 
 

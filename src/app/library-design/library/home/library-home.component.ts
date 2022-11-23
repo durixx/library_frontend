@@ -55,6 +55,10 @@ export class LibraryHomeComponent {
     this.control.openedLibrary = library;
     this.control.changeModeToDetail();
   }
+
+  changePageToNewBook() {
+    this.control.changeModeToNewBook();
+  }
 }
 
 export class TableColumn {

@@ -18,6 +18,7 @@ import { LibraryMessageComponent } from './library-message/library-message.compo
 import {MatDialogModule} from '@angular/material/dialog';
 import { RackCreationComponent } from './library-design/rack/rack-creation-form/rack-creation.component';
 import {RackControlService} from './library-design/rack/rack-creation-form/rack-control.service';
+import {BookCreationComponent} from "./library-design/book/book-creation-form/book-creation.component";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {RackControlService} from './library-design/rack/rack-creation-form/rack-
     LibraryDetailComponent,
     LibraryMessageComponent,
     RackCreationComponent,
+    BookCreationComponent
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {filter, map, Observable} from 'rxjs';
 import {Library} from './creation-form/library.model';
-import {HttpConfigService} from '../../shared/http-config.service';
 import {Rack} from '../rack/rack-creation-form/rack.model';
+import {Book} from '../book/book-creation-form/book.model';
+import {HttpConfigService} from '../../shared/http-config.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class LibraryRequestService {
 
   private readonly LIBRARY: string = '/library';
   private readonly RACK: string = '/rack';
+  private readonly BOOK: string= '/book';
 
   constructor(private http: HttpClient, private httpConfigService: HttpConfigService) {
   }
@@ -39,5 +41,9 @@ export class LibraryRequestService {
 
   getAllRacks(library: Library): Observable<Rack[]> {
     return this.http.get<Rack[]>(`${this.httpConfigService.rootUrl}${this.RACK}/${library.id}/all`);
+  }
+
+  postBook(book: Book): Observable<Book> {
+    return this.http.post<Book>(`${this.httpConfigService.rootUrl}${this.BOOK}`, book);
   }
 }

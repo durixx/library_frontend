@@ -1,0 +1,78 @@
+
+<div class="book-home-container"
+     *ngIf="control.viewMode === 'NEW_BOOK'">
+  <div class="book-home-form"
+       [formGroup]="formGroup">
+    <h1 class="book-home-header">
+      Book Registration
+    </h1>
+    <p>
+      <mat-form-field class="book-home-mat-form-field"
+                      appearance="standard">
+        <mat-label>
+          Name of book
+        </mat-label>
+        <input formControlName="name"
+               matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="book-home-mat-form-field"
+                      appearance="standard">
+        <mat-label>
+          Author
+        </mat-label>
+        <input formControlName="author" matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="book-home-mat-form-field"
+                      appearance="standard">
+        <mat-label>
+          Year of release
+        </mat-label>
+        <input
+          type="number"
+          min="0"
+          formControlName="yearOfRelease" matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="book-home-mat-form-field"
+                      appearance="standard">
+        <mat-label>
+          Description
+        </mat-label>
+        <input formControlName="description" matInput>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="book-home-mat-form-field"
+                      appearance="standard">
+        <mat-label>
+          Isbn
+        </mat-label>
+        <input
+          type="number"
+          min="1"
+          formControlName="isbn" matInput>
+      </mat-form-field>
+    </p>
+
+    <div class="book-home-buttons">
+      <button class="button"
+              mat-raised-button color="primary"
+              [disabled]="!formGroup.valid"
+              (click)="onSubmitRegistration(formGroup.value)"
+      >
+        Confirm
+      </button>
+      <button class="book-home-button"
+              mat-raised-button
+              (click)="onCancelNewBook()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
